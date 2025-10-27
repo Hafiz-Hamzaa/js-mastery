@@ -87,3 +87,12 @@ console.log(emptyStr);
 let input = "I love JavaScript"
 let revOrder = input.split(" ").reverse().join(" ")
 console.log(revOrder);
+
+// replaces word of hammad with sufiyan
+let string = "Hammad's name : I am muhammad hammad my mother call me as  muhammad hammad and my father call me as hammad";
+let breakWord = string.split(" ")
+let firstWor = breakWord[0].charAt(0).toLowerCase()+breakWord[0].slice(1)+ " " +breakWord.slice(1).join(" ")
+console.log(string);
+console.log(firstWor);
+let result = firstWor.replaceAll("hammad's","sufiyan's").replaceAll(" hammad"," sufiyan");
+console.log(result);

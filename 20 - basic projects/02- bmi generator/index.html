@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Generator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #84c97b;
+      background-attachment: fixed;
+    }
+
+    .bmi-container {
+      width: 340px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bmi-container:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      width: 100%;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #00cec9, #00b894);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #f1f1f1;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bmi-container">
+    <h1>BMI Generator</h1>
+
+    <div class="input-group">
+      <input type="number" id="height" placeholder="Height (in cm)">
+      <input type="number" id="weight" placeholder="Weight (in kg)">
+    </div>
+
+    <button class="btn">Calculate</button>
+
+    <div class="result"></div>
+    <div class="rangeRes"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

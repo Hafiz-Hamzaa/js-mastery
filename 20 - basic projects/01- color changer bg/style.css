@@ -1,0 +1,87 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: pink;
+      transition: background 0.5s ease;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #222;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .color-container {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .color-box {
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.4s ease;
+    }
+
+    .color-box:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Different color boxes */
+    .red { background: #ff595e; }
+    .blue { background: #1982c4; }
+    .purple { background: #6a4c93; }
+    .green { background: #8ac926; }
+
+    /* Text below boxes */
+    p {
+      margin-top: 35px;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* Optional glowing border animation */
+    .color-box::after {
+      content: '';
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 25px;
+      background: inherit;
+      filter: blur(20px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .color-box:hover::after {
+      opacity: 0.7;
+    }

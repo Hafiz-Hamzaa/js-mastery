@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BG Color Changer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #aa64a1; /* default color */
+        transition: background-color 0.5s ease;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 40px 50px;
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        color: white;
+        margin-bottom: 25px;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+      }
+
+      button {
+        padding: 12px 28px;
+        background: white;
+        border: none;
+        border-radius: 8px;
+        color: #6c5ce7;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        transform: translateY(-3px);
+        background: #f2f2f2;
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="colorCode">#6C5CE7</h2>
+      <button id="changeBtn">Change Color</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Bud</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f1f5f8;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding-top: 50px;
+    }
+
+    .container {
+      background: #fff;
+      width: 90%;
+      max-width: 480px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #102a42;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .form-control {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #grocery-input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #submit-btn {
+      padding: 12px 20px;
+      background: #5a67d8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    #submit-btn:hover {
+      background: #434da3;
+    }
+
+    .grocery-list {
+      margin-top: 10px;
+    }
+
+    .grocery-item {
+      background: #f9f9f9;
+      padding: 12px 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid #5a67d8;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-size: 17px;
+      font-weight: 500;
+      color: #102a42;
+    }
+
+    .actions button {
+      border: none;
+      background: none;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: 0.2s;
+    }
+
+    .edit-btn {
+      color: #38a169;
+    }
+    .edit-btn:hover {
+      color: #277a4b;
+    }
+
+    .delete-btn {
+      color: #e53e3e;
+    }
+    .delete-btn:hover {
+      color: #b82626;
+    }
+
+    #clear-btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #e53e3e;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      transition: 0.3s;
+    }
+
+    #clear-btn:hover {
+      background: #b82626;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Grocery Bud</h2>
+
+    <!-- Input + Button -->
+    <div class="form-control">
+      <input type="text" id="grocery-input" placeholder="e.g. Bread" />
+      <button id="submit-btn">Add</button>
+    </div>
+
+    <!-- List Items -->
+    <div class="grocery-list" id="grocery-list">
+      <!-- <div class="grocery-item">
+        <p class="title"></p>
+        <div class="actions">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div> -->
+    </div>
+
+    <button id="clear-btn">Clear All Items</button>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

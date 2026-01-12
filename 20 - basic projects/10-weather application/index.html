@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <h1>Weather Forecast</h1>
+
+    <div class="search-box">
+      <input type="text" placeholder="Enter city name" id="cityInput">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="weather-card" id="weatherCard">
+      <h2 id="cityName">Karachi</h2>
+      <p id="condition">Cloudy</p>
+
+      <div class="icon" id="weatherIcon">☁️</div>
+
+      <div class="temp">
+        <span id="temp">30</span>°C
+      </div>
+
+      <div class="details">
+        <div>
+          <p>Clouds</p>
+          <span id="clouds">60%</span>
+        </div>
+        <div>
+          <p>Humidity</p>
+          <span id="humidity">70%</span>
+        </div>
+        <div>
+          <p>Wind</p>
+          <span id="wind">5 km/h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

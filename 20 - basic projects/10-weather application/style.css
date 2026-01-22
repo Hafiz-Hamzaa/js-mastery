@@ -5,55 +5,53 @@
   font-family: "Segoe UI", sans-serif;
 }
 
+/* ================= BODY ================= */
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   color: white;
-  font-family: "Segoe UI", sans-serif;
-
-  /* Full screen background image */
-  background: url('https://images.unsplash.com/photo-1712133611025-a285627b6d7d?w=1920&auto=format&fit=crop&q=80') no-repeat center center;
-  background-size: cover;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  background: url('https://images.unsplash.com/photo-1712133611025-a285627b6d7d?w=1920&auto=format&fit=crop&q=80')
+    no-repeat center center / cover;
 }
 
-/* Dark overlay for readability */
+/* Dark Overlay */
 body::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(43, 0, 64, 0.6); /* semi-dark purple */
-  z-index: -1;
+  inset: 0;
+  background: rgba(43, 0, 64, 0.6);
+  z-index: 0;
 }
 
-/* App container */
+/* ================= APP CONTAINER ================= */
 .app {
-    width: 90%;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px); /* slightly stronger blur */
+  backdrop-filter: blur(16px);
   padding: 30px;
   border-radius: 25px;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
-/* Heading */
+/* ================= HEADING ================= */
 .app h1 {
   margin-bottom: 25px;
   color: #d6b4ff;
-  font-size: 28px;
+  font-size: clamp(22px, 5vw, 28px);
   text-shadow: 0 0 10px rgba(214,180,255,0.6);
 }
 
-/* Search Box */
+/* ================= SEARCH BOX ================= */
 .search-box {
   display: flex;
   gap: 12px;
@@ -69,7 +67,6 @@ body::before {
   background: rgba(31,0,48,0.9);
   color: white;
   font-size: 15px;
-  transition: 0.3s;
 }
 
 .search-box input:focus {
@@ -77,7 +74,7 @@ body::before {
 }
 
 .search-box button {
-  padding: 14px 20px;
+  padding: 14px 18px;
   border: none;
   border-radius: 12px;
   background: #ff7a00;
@@ -85,18 +82,16 @@ body::before {
   font-weight: bold;
   cursor: pointer;
   font-size: 15px;
-  transition: 0.3s;
 }
 
 .search-box button:hover {
   background: #ffa64d;
 }
 
-/* Weather Card */
+/* ================= WEATHER CARD ================= */
 .weather-card {
   margin-top: 25px;
   text-align: center;
-  position: relative;
   transition: 0.3s;
 }
 
@@ -104,56 +99,44 @@ body::before {
   transform: translateY(-5px);
 }
 
-/* City Name */
 .weather-card h2 {
-  font-size: 28px;
+  font-size: clamp(22px, 6vw, 28px);
   margin-bottom: 5px;
-  text-shadow: 0 0 8px rgba(255,255,255,0.4);
 }
 
-/* Condition */
 .weather-card p {
   color: #ccc;
-  margin-top: 3px;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: capitalize;
 }
 
-/* Weather Icon */
+/* ================= ICON & TEMP ================= */
 .icon {
-  font-size: 60px;
-  margin: 15px 0;
-  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+  font-size: clamp(45px, 12vw, 60px);
+  margin: 12px 0;
 }
 
-/* Temperature */
 .temp {
-  font-size: 65px;
+  font-size: clamp(40px, 14vw, 65px);
   font-weight: bold;
   margin: 15px 0;
   color: #ffb347;
   text-shadow: 0 0 10px rgba(255,179,71,0.5);
-  transition: color 0.3s;
 }
 
-/* Details (Clouds, Humidity, Wind) */
+/* ================= DETAILS ================= */
 .details {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin-top: 25px;
-  gap: 8px;
 }
 
 .details div {
+  flex: 1;
   background: rgba(255,255,255,0.12);
   padding: 12px;
   border-radius: 15px;
-  width: 30%;
-  transition: 0.3s;
-}
-
-.details div:hover {
-  background: rgba(255,255,255,0.2);
 }
 
 .details p {
@@ -167,64 +150,37 @@ body::before {
   font-size: 16px;
 }
 
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
 
-/* Mobile Responsive */
-@media screen and (max-width: 420px) {
   .app {
-    width: 90%; 
-    max-width: 320px;
     padding: 20px;
     border-radius: 20px;
+    right: 0; /* Fix positioning for small screens */
   }
 
-  .app h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  .search-box {
+    flex-direction: column;
   }
 
-  .search-box input {
-    padding: 12px;
-    font-size: 14px;
-  }
-
+  .search-box input,
   .search-box button {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-
-  .weather-card h2 {
-    font-size: 24px;
-  }
-
-  .weather-card p {
-    font-size: 14px;
-  }
-
-  .icon {
-    font-size: 50px;
-    margin: 10px 0;
-  }
-
-  .temp {
-    font-size: 50px;
-    margin: 10px 0;
+    width: 100%;
   }
 
   .details {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 
-  .details div {
-    width: 100%;
-    padding: 10px;
+  .temp {
+    font-size: clamp(30px, 12vw, 50px);
   }
 
-  .details p {
-    font-size: 12px;
-  }
-
-  .details span {
-    font-size: 14px;
+  .icon {
+    font-size: clamp(35px, 12vw, 50px);
   }
 }
